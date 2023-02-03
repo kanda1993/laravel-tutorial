@@ -1,0 +1,26 @@
+version: '3'
+services:
+  laravel-study:
+    build: 
+      context: .
+      dockerfile: ./backend/laravel/Dockerfile
+    image: laravel
+    tty: true
+    volumes:
+      - ../:/workspace
+  laravel-study-db:
+    build:
+      context: .
+      dockerfile: ./backend/db/Dockerfile
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - laravel-study-mysql-volume:/var/lib/mysql
+volumes:
+  laravel-study-mysql-volume:

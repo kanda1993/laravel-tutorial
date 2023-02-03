@@ -1,0 +1,88 @@
+{
+    "name": "laravel-study",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "laravel-study",
+    "workspaceFolder": "/workspace",
+    "extensions": [
+        "eamodio.gitlens",
+        "visualstudioexptteam.vscodeintellicode",
+        "christian-kohler.path-intellisense",
+        "oderwat.indent-rainbow",
+        "formulahendry.auto-rename-tag",
+        "dbaeumer.vscode-eslint",
+        "stylelint.vscode-stylelint",
+        "dsznajder.es7-react-js-snippets",
+        "MariusAlchimavicius.json-to-ts",
+        "bmewburn.vscode-intelephense-client",
+        "junstyle.php-cs-fixer",
+        "neilbrayfield.php-docblocker",
+        "onecentlin.laravel5-snippets",
+        "onecentlin.laravel-blade",
+        "ryannaddy.laravel-artisan",
+        "amiralizadeh9480.laravel-extra-intellisense",
+        "ctf0.laravel-goto-controller",
+        "codingyu.laravel-goto-view",
+        "xdebug.php-debug"
+    ],
+    "settings": {
+        // ESLint
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true,
+            "source.fixAll.stylelint": true
+        },
+        "eslint.packageManager": "yarn",
+        "typescript.enablePromptUseWorkspaceTsdk": true,
+        "[graphql]": {
+            "editor.formatOnSave": true
+        },
+        "[javascript]": {
+            "editor.formatOnSave": true,
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[javascriptreact]": {
+            "editor.formatOnSave": true,
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[json]": {
+            "editor.formatOnSave": true,
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[typescript]": {
+            "editor.formatOnSave": true
+        },
+        "[typescriptreact]": {
+            "editor.formatOnSave": true
+        },
+        // Stylelint
+        "css.validate": false,
+        "less.validate": false,
+        "scss.validate": false,
+        "gitlens.defaultDateFormat": null,
+        "workbench.editorAssociations": {
+            "*.ipynb": "jupyter-notebook"
+        },
+        "git.confirmSync": false,
+        "notebook.cellToolbarLocation": {
+            "default": "right",
+            "jupyter-notebook": "left"
+        },
+        "git.ignoreRebaseWarning": true,
+        "editor.minimap.enabled": false,
+        "editor.formatOnSave": true,
+        "editor.bracketPairColorization.enabled": true,
+        "editor.guides.bracketPairs": "active",
+        // PHP
+        "[php]": {
+            "editor.defaultFormatter": "junstyle.php-cs-fixer"
+        },
+        "php.validate.executablePath": "/usr/bin/php",
+        "php-cs-fixer.executablePath": "/workspace/vendor/bin/php-cs-fixer",
+        "php-cs-fixer.onsave": true,
+        "php-cs-fixer.showOutput": false,
+        "php-cs-fixer.rules": "@PSR2",
+        "php-cs-fixer.autoFixBySemicolon": true,
+    },
+    "forwardPorts": [
+        3000
+    ]
+}
