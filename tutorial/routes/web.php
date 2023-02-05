@@ -27,16 +27,16 @@ Route::get('posts', function () {
     return view('blog', [
         'posts' => $posts
     ]);
-    
+
 });
 
 
 Route::get('posts/{post}', function ($slug) {
 
-    $post = Post::find($slug);
+    $post = Post::findOrFail($slug);
 
     return view('post', [
         'post' => $post
     ]);
 
-})->whereNumber('post');
+});

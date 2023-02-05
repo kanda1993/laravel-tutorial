@@ -36,11 +36,17 @@ class Post
     }
 
     public static function find($slug) {
+        $post = static::all()->firstWhere('slug', $slug);
+        return $post;
+    }
 
-        if ( !file_exists($path = resource_path("posts/my-{$slug}-post.html")) ) {
+    public static function findOrFail($slug) {
+        $post = static::find($slug);
+
+        if(! $post){
             throw new ModelNotFoundException('not found post');
         }
-        
-        return cache()->remember("posts.{$slug}", 1200, fn() => file_get_contents($path) );
+
+        return $post;
     }
 }

@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        post 
+<x-layout>
+    post 
+    <h1>slug</h1>
+    <?= $post->body ?>
+</x-layout>
 
-        <h1>slug</h1>
-        <?= $post; ?>
-    </body>
-</html>
+
