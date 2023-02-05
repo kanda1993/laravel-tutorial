@@ -21,14 +21,18 @@ class Post
     }
 
     public static function all() {
-        return collect(File::files(resource_path("posts/")))
+
+        return cache()->remember('post.all', 1,  function(){
+            return collect(File::files(resource_path("posts/")))
             ->map(fn ($file) => YamlFrontMatter::parseFile($file))
             ->map(fn ($document) => new Post(
                     $document->title,
                     $document->slug,
                     $document->body()
                 )
-            );
+            )
+            ->sortBy('slug');
+        });
     }
 
     public static function find($slug) {
